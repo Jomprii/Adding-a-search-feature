@@ -59,6 +59,7 @@ html {
   width: 90%;
   height: 35px;
   border-width: 2px;
+  border-color: teal;
 }
 
 .searchbar {
