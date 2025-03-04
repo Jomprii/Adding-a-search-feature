@@ -5,11 +5,11 @@ fetch(jsonURL)
   .then((data) => {
     let courselist = document.getElementById("course-list");
 
-    // Check if JSON contains 'students' array
     if (data.courses && Array.isArray(data.courses)) {
       data.courses.forEach((course) => {
         let listItem = document.createElement("li");
-        listItem.innerHTML = `${course.year_level} year - ${course.sem} sem - ${course.code} = ${course.description} - ${course.credit} <br> <br>`;
+        listItem.innerHTML = `${course.year_level} year - ${course.sem} sem - ${course.code} = ${course.description} - ${course.credit}`;
+        listItem.classList.add("course-item");
         courselist.appendChild(listItem);
       });
     } else {
@@ -17,3 +17,16 @@ fetch(jsonURL)
     }
   })
   .catch((error) => console.error("Error fetching JSON:", error));
+
+function searchCourses() {
+  let input = document.getElementById("searchinput").value.toLowerCase();
+  let items = document.querySelectorAll(".course-item");
+
+  items.forEach((item) => {
+    if (item.innerHTML.toLowerCase().includes(input)) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}

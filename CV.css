@@ -54,3 +54,14 @@ img {
 html {
   scroll-behavior: smooth;
 }
+
+#searchinput {
+  width: 90%;
+  height: 35px;
+  border-width: 2px;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+}
