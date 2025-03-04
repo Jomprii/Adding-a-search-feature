@@ -8,7 +8,7 @@ fetch(jsonURL)
     if (data.courses && Array.isArray(data.courses)) {
       data.courses.forEach((course) => {
         let listItem = document.createElement("li");
-        listItem.innerHTML = `${course.year_level} year - ${course.sem} sem - ${course.code} = ${course.description} - ${course.credit}`;
+        listItem.innerHTML = `${course.year_level} year - ${course.sem} sem - ${course.code} = ${course.description} - ${course.credit} <br> <br>`;
         listItem.classList.add("course-item");
         courselist.appendChild(listItem);
       });
